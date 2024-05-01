@@ -1,0 +1,62 @@
+##### Dataset #####
+We used CelebA dataset.
+You can download it from: http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
+##### Folder Configuration #####
+data
+--celebA
+----list_attr_celeba.txt
+----images
+------images.png
+DCEVAE_ours
+--readme
+--src
+----main.py
+----DCEVAE.py
+----block.py
+----train.py
+----test.py
+----dataloader.py
+----show_img.py
+----info
+------celeba-train.csv
+------celeba-test.csv
+------celeba-valid.csv
+------celeba-whole.csv
+------list_attr_celeba.txt
+------list_eval_partition.txt
+----Generate_image.py
+CVAE_baselines
+...similar with DCEVAE
+CEVAE_baselines
+...similar with DCEVAE
+mCEVAE_baselines
+...similar with DCEVAE
+
+##### How to commit ######
+Move to DCEVAE_ours/src
+python3 main.py (or) sh run.sh
+
+##### After you commit ######
+The result folder is created under the DCEVAE folder.
+
+e.g.
+DCEVAE
+--result
+----ud_ur_dim_5_5_1.00_40.00_1.00_3.20 (parameter)
+------M1 (intervention+seed: Mustache+1)
+------S1 (intervention+seed: Smiling+1)
+
+With trained model, you can generate the several counterfactual images with respect to real image by using "Generate_image.py"
+
+##### After you run "Generate_image.py" ######
+DCEVAE
+--result
+--src
+--Generated_Dataset
+----ud_ur_dim_5_5_1.00_40.00_1.00_3.20 (parameter)
+------M1 (intervention+ seed)
+--------cf
+--------real
+--------rec
+All baselines, CVAE, CEVAE, and mCEVAE, follow the similar structure.
