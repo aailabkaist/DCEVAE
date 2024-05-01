@@ -1,0 +1,63 @@
+##### Dataset #####
+Original: UCI Adult Dataset
+Preprocessed Version: Following "Achieving Causal Fairness through Generative Adversarial Networks (IJCAI, 19)""
+
+##### Folder Configuration #####
+data
+--cfgan
+----list_attr_adult.txt
+DCEVAE_ours
+--main.py
+--model.py
+--train.py
+--test.py
+--utils.py
+--statistics.py
+--fair_classifier.py
+CEVAE_baselines
+--main.py
+--model.py
+--train.py
+--test.py
+--utils.py
+--statistics.py
+--fair_classifier.py
+CVAE_baselines
+--main.py
+--model.py
+--train.py
+--test.py
+--utils.py
+--statistics.py
+--fair_classifier.py
+mCEVAE_baselines
+--main.py
+--model.py
+--train.py
+--test.py
+--utils.py
+--statistics.py
+--fair_classifier.py
+
+##### How to commit ######
+move to DCEVAE_ours/
+python3 main.py
+
+##### After you commit ######
+The result folder is created under the DCEVAE folder
+
+e.g.
+DCEVAE
+--result
+----a_r_1_a_d_1_a_y_1_a_h_0.4_a_f_0.0_u_1_ur_3_ud_4_run_1 (parameter)
+------train.npz
+------valid.npz
+------test.npz
+------train_log.txt
+------test_log.txt
+------classifier_log.txt
+------loss_and_accuracy.png
+------tSNE_Ur_wrt_A.png
+------tSNE_Ud_wrt_A.png
+
+All baselines, CVAE, CEVAE, and mCEVAE, follows similar steps.
